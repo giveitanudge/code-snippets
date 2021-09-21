@@ -16,7 +16,7 @@ eventTypes.forEach(function(eventType) {
 
 // Add ndgEventPixel to page / track event in Nudge
 function addTrackingPixel(ndgEventCapture) {
-  var ndgAccountID = 'NUDGE ACCOUNT ID';
+  var ndgAccountID = 'NUDGE UNIQUE ID';
   var ndgContentID = 'CUSTOM CONTENT ID';
 
   var pixel = document.createElement("IMG");
