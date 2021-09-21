@@ -1,4 +1,4 @@
-// Declare which Cloudinary events to capture
+// List of video events to track in Nudge
 var eventTypes = ['play', 'pause', 'mute', 'unmute', 'percentsplayed', 'ended'];
 
 eventTypes.forEach(function(eventType) {
