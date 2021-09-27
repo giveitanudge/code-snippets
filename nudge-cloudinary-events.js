@@ -5,12 +5,15 @@ eventTypes.forEach(function(eventType) {
   player.on(eventType, function(event) {
   var ndgEventCapture = eventType;
     if (eventType == 'percentsplayed') {
-      ndgEventCapture = event.eventData.percent + '_percent_played';
+      ndgEventCapture = event.eventData.percent + '_Percent';
       addTrackingPixel(ndgEventCapture);
-      } 
-    else {
-        addTrackingPixel(ndgEventCapture);
-    }
+    } else if (eventType == 'ended') {
+      ndgEventCapture = 'play_complete';
+      addTrackingPixel(ndgEventCapture);
+    } else {
+      addTrackingPixel(ndgEventCapture);
+    } 
+    //console.log(ndgEventCapture); // Uncomment to view event logs
   })
 });
 
