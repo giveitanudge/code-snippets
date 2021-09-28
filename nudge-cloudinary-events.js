@@ -26,8 +26,9 @@ function addTrackingPixel(ndgEventCapture) {
   var ndgAccountID = 'NUDGE UNIQUE ID'; // Paste your Nudge Unique ID / Account ID here
   var ndgContentID = 'CUSTOM CONTENT ID'; // Set a content ID for the video here
 
+  var ndgURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
   var pixel = document.createElement("IMG");
-  pixel.setAttribute("src", "https://e.ndg.io/v1/v.gif?owner_id=" + ndgAccountID + "&content_id=" + ndgContentID + "&name=" + ndgEventCapture);
+  pixel.setAttribute("src", "https://e.ndg.io/v1/v.gif?owner_id=" + ndgAccountID + "&content_id=" + ndgContentID + "&name=" + ndgEventCapture + "&url=" + ndgURL);
   pixel.setAttribute("height", "1");
   pixel.setAttribute("width", "1");
   document.body.appendChild(pixel);
