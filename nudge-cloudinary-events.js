@@ -1,3 +1,7 @@
+// This code snippet is designed to work standalone and  
+// can be added to any page serving video using the 
+// Cloudinary Video Player. 
+
 // List of video events to track in Nudge
 var eventTypes = ['play', 'pause', 'mute', 'unmute', 'percentsplayed', 'ended'];
 
@@ -17,7 +21,7 @@ eventTypes.forEach(function(eventType) {
   })
 });
 
-// Add ndgEventPixel to page / track event in Nudge
+// Function to add Nudge Event Pixels to page and track the events within Nudge
 function addTrackingPixel(ndgEventCapture) {
   var ndgAccountID = 'NUDGE UNIQUE ID'; // Paste your Nudge Unique ID / Account ID here
   var ndgContentID = 'CUSTOM CONTENT ID'; // Set a content ID for the video here
