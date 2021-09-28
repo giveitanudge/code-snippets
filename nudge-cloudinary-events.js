@@ -23,8 +23,8 @@ eventTypes.forEach(function(eventType) {
 
 // Function to add Nudge Event Pixels to page and track the events within Nudge
 function addTrackingPixel(ndgEventCapture) {
-  var ndgAccountID = 'NUDGE UNIQUE ID'; // Paste your Nudge Unique ID / Account ID here
-  var ndgContentID = 'CUSTOM CONTENT ID'; // Set a content ID for the video here
+  var ndgAccountID = 'NUDGE_UNIQUE_ID'; // Paste your Nudge Unique ID / Account ID here
+  var ndgContentID = 'CUSTOM_CONTENT_ID'; // Set a content ID for the video here
 
   var ndgURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
   var pixel = document.createElement("IMG");
