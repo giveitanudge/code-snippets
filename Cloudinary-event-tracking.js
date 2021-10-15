@@ -2,7 +2,13 @@
 // can be added to any page serving video using the 
 // Cloudinary Video Player. 
 
-// List of video events to track in Nudge
+// Set your Nudge Unique ID / Account ID here (Required)
+var ndgAccountID = 'NUDGE_UNIQUE_ID'; 
+
+// Set a content ID for the video here (Recommended)
+var ndgContentID = 'CUSTOM_CONTENT_ID';
+
+// Register events to track
 var eventTypes = ['play', 'pause', 'mute', 'unmute', 'percentsplayed', 'ended'];
 
 eventTypes.forEach(function(eventType) {
@@ -16,19 +22,17 @@ eventTypes.forEach(function(eventType) {
       addTrackingPixel(ndgEventCapture);
     } else {
       addTrackingPixel(ndgEventCapture);
-    } 
-    //console.log(ndgEventCapture); // Uncomment to view event logs
+    }
+    // DEBUG Uncomment below to view event logs
+    // console.log(eventType);
   })
 });
 
-// Function to add Nudge Event Pixels to page and track the events within Nudge
-function addTrackingPixel(ndgEventCapture) {
-  var ndgAccountID = 'NUDGE_UNIQUE_ID'; // Paste your Nudge Unique ID / Account ID here
-  var ndgContentID = 'CUSTOM_CONTENT_ID'; // Set a content ID for the video here
-
+// Add Nudge Event Pixels to page for each event to track within Nudge
+function addTrackingPixel(eventType) {
   var ndgURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
   var pixel = document.createElement("IMG");
-  pixel.setAttribute("src", "https://e.ndg.io/v1/v.gif?owner_id=" + ndgAccountID + "&content_id=" + ndgContentID + "&name=" + ndgEventCapture + "&url=" + ndgURL);
+  pixel.setAttribute("src", "https://e.ndg.io/v1/v.gif?owner_id=" + ndgAccountID + "&content_id=" + ndgContentID + "&name=" + eventType + "&url=" + ndgURL);
   pixel.setAttribute("height", "1");
   pixel.setAttribute("width", "1");
   document.body.appendChild(pixel);
